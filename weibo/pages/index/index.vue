@@ -2,7 +2,7 @@
 	<view class="content">
 		<image class="logo" src="/static/logo.png"></image>
 		<view class="text-area">
-			<text class="title">{{title}},achao!!</text>
+			<text class="title">{{title}},acha6555o!!</text>
 		</view>
 	</view>
 </template>
