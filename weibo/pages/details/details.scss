@@ -1,0 +1,138 @@
+.contentList{
+		position: absolute;
+		width: 100%;
+		top: 0;
+		left: 0;
+		height: 100%;
+		overflow-y: auto;
+		.contentItem{
+			padding: 20upx;
+			border-bottom: 1px solid #e6e6e6;
+			.itemTop{
+				padding-left: 90upx;
+				position: relative;
+				margin-bottom: 30upx;
+				.userName{
+					font-size: 32upx;
+					color: #333;
+					padding-bottom: 5upx;
+				}
+				.tips{
+					font-size: 26upx;
+					color: #939393;
+					text{
+						padding-right: 15upx;
+					}
+				}
+				.userLogo {
+					width: 70upx;
+					height: 70upx;
+					background: red;
+					position: absolute;
+					top: 50%;
+					transform: translateY(-50%);
+					left: 0upx;
+				}
+			}
+			.contentText{
+				font-size: 34upx;
+				color: #333;
+			}
+			.contentImg{
+				width: 100%;
+				display: flex;
+				margin: 20upx auto;
+				.contentImgItem{
+					width: 32%;
+					overflow: hidden;
+					margin-right: 1.5%;
+					image{
+						width: 100%;
+					}
+					&:nth-child(3n){
+						margin-right: 0;
+					}
+				}
+			}
+			
+		}
+		
+		.footer{
+			font-size: 28upx;
+			border-top: 10rpx solid #e6e6e6;
+			box-shadow: 0 1px 0 0 #e6e6e6;
+			width: 100%;
+			display: flex;
+			color: rgba(40,47,60,0.8);
+			padding: 0 20rpx;
+			line-height: 100rpx;
+			height: 100rpx;
+			box-sizing: border-box;
+			position: relative;
+			.item{
+				margin-right: 40upx;
+				&.active{
+					border-bottom: 3px solid #333333;
+					color: #333;
+				}
+			}
+		}
+		
+		.tab2{
+			.tab2Time{
+				padding: 30upx 0 30upx 100upx;
+				position: relative;
+				.logo{
+					width: 70upx;
+					height: 70upx;
+					border-radius: 50%;
+					background: red;
+					position: absolute;
+					top: 30upx;
+					left: 20upx;
+				}
+				.contRight{
+					border-bottom: 1px solid #e6e6e6;
+					padding-bottom: 30upx;
+					.userName{
+						font-size: 32upx;
+					}
+					.contentTxt{
+						padding: 10upx 0 15upx;
+						font-size: 36upx;
+					}
+					.contentTxtCont{
+						line-height: 44upx;
+						padding: 20upx 25upx;
+						background: #f7f7f7;
+						color: #333;
+						font-size: 32upx;
+						word-wrap: break-word;
+						margin-right: 30upx;
+						.uname{
+							color: #507DAF;
+						}
+					}
+					.contentFoot{
+						color: #999;
+						font-size: 30upx;
+						margin-top: 20upx;
+						margin-right: 30upx;
+						.dz,.pl{
+							float: right;
+							margin-left: 20upx;
+						}
+					}
+				}
+			}
+		}
+		.tab3{
+			.contRight{
+				height: 70upx;
+				border-bottom: 1px solid #e6e6e6;
+			}
+			.userName{
+				line-height: 70upx;
+			}
+		}
+	}
