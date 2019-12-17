@@ -1,0 +1,77 @@
+.editTop{
+	height: 100rpx;
+	line-height: 100rpx;
+	position: relative;
+	text-align: center;
+	padding-top: 10rpx;
+	box-sizing: border-box;
+	border-bottom: 1px solid #cfcfcf;
+}
+.logo{
+	width: 80rpx;
+	height: 80rpx;
+	margin: 0 auto;
+	border-bottom: 1px solid #cfcfcf;
+	vertical-align: middle;
+	border-radius: 50%;
+}
+.editTxt{
+	font-size: 30rpx;
+	width: 130rpx;
+	color: #1b9af4;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+.editText{
+	width: 100%;
+	min-height: 200rpx;
+	padding: 20rpx;
+	box-sizing: border-box;
+	font-size: 26rpx;
+	// background: red
+}
+.contentImg{
+	width: 100%;
+	display: flex;
+	margin: 0 auto;
+	padding: 20rpx;
+	box-sizing: border-box;
+	flex: 3;
+	flex-wrap: wrap ;
+	.contentImgItem{
+		width: 32%;
+		overflow: hidden;
+		line-height: 0;
+		margin-right: 2%;
+		margin-bottom: 10rpx;
+		image{
+			width: 100%;
+		}
+		&:nth-child(3n){
+			margin-right: 0;
+		}
+	}
+}
+.visible{
+	position: fixed;
+	bottom: 50rpx;
+	right: 10rpx;
+    background-color: #f8f8f8;
+    color: #4e7cb1;
+	font-size: 24rpx;
+    border-radius: 30rpx;
+    padding: 10rpx 20rpx;
+}
+.foot{
+	height: 100rpx;
+	line-height: 100rpx;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	.addImg{
+		font-size: 28rpx;
+		width: 200rpx;
+		text-align: center;
+	}
+}

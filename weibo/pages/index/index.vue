@@ -126,23 +126,84 @@
 			
 			
 		</view>
+		<view class="prop" v-if="userInfo==''">
+			<view class="bom">
+				<button class="btn" open-type="getUserInfo" @getuserinfo="getUserInfo">授权登录</button>
+			</view>
+		</view>
 	</view>
 </template>
 
 <script>
+	import {ajax,showTips,urlTobase64} from '@/ajax.js'
 	export default {
 		data() {
 			return {
+				userInfo: '',
 				oheight:''
 			}
 		},
 		onLoad() {
-			wx.createSelectorQuery().selectAll('.contentImg').boundingClientRect(function (rect) {
-			   this.oheight= rect[0].width * (32/100);
-			}).exec()
+			let _this = this;
+			wx.getSetting({ //判断是否授权
+			  success (res){
+				if (res.authSetting['scope.userInfo']) { //已经授权
+				  wx.getUserInfo({
+					success: function(res) {
+						_this.userInfo = res.userInfo;
+						console.log('-----')
+					}
+				  })
+				}else{
+					console.log('=======')
+					_this.userInfo = ''
+				}
+			  }
+			})
+			
+			// uni.login({
+			//   success (res) {
+			// 	if (res.code) {
+			// 	  //发起网络请求
+			// 	  uni.request({
+			// 		url: ajax.login,
+			// 		data: {
+			// 		  code: res.code
+			// 		},
+			// 		header:{
+			// 			'Content-Type':'application/x-www-form-urlencoded'
+			// 		},
+			// 		method:'POST',
+			// 		success: (rs) => {
+			// 			console.log(rs.data.data)
+			// 			uni.getUserInfo({
+			// 				lang:'zh_CN',
+			// 				success: function(res) {
+			// 					var userInfo = res.userInfo
+			// 					var nickName = userInfo.nickName
+			// 					var avatarUrl = userInfo.avatarUrl
+			// 					var gender = userInfo.gender //性别 0：未知、1：男、2：女
+			// 					var province = userInfo.province
+			// 					var city = userInfo.city
+			// 					var country = userInfo.country
+			// 					console.log(res,'-----')
+			// 				}
+			// 			})
+			// 		},
+			// 	  })
+			// 	} else {
+			// 	  console.log('登录失败！' + res.errMsg)
+			// 	}
+			//   }
+			// })
+
 		},
 		methods: {
-		}
+			getUserInfo(e){ //授权成功
+				console.log('-----',e)
+			}
+		},
+		
 	}
 </script>
 

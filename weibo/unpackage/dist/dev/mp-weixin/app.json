@@ -1,7 +1,8 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/details/details"
+    "pages/details/details",
+    "pages/edit/edit"
   ],
   "subPackages": [],
   "window": {
@@ -10,5 +11,6 @@
     "navigationBarBackgroundColor": "#fff",
     "backgroundColor": "#F8F8F8"
   },
-  "usingComponents": {}
+  "usingComponents": {},
+  "sitemapLocation": "sitemap70.json"
 }

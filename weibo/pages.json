@@ -12,6 +12,12 @@
 			"style": {
 				"navigationBarTitleText": "详情"
 			}
+		},
+		{
+			"path": "pages/edit/edit",
+			"style": {
+				"navigationBarTitleText": "编辑"
+			}
 		}
 	],
 	"globalStyle": {
