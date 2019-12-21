@@ -70,6 +70,7 @@ export const ajax = {
 	wbSend:  		ohref + '/wbSend',
 	wbInfo:  		ohref + '/wbInfo',
 	wbInfoAppoint:  ohref + '/wbInfoAppoint',
+	wbcomment:		ohref + '/wbcomment',
 }
 
     

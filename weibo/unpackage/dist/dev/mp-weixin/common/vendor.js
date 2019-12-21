@@ -7677,7 +7677,8 @@ var ajax = {
   login: ohref + '/login',
   wbSend: ohref + '/wbSend',
   wbInfo: ohref + '/wbInfo',
-  wbInfoAppoint: ohref + '/wbInfoAppoint' };exports.ajax = ajax;
+  wbInfoAppoint: ohref + '/wbInfoAppoint',
+  wbcomment: ohref + '/wbcomment' };exports.ajax = ajax;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
