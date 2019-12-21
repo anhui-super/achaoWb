@@ -29,8 +29,7 @@
   width: 100%;
   padding: 20rpx;
   background: #fafafa;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   position: relative;
 }
 .content .navTop .logo {
@@ -57,12 +56,10 @@
     white-space: nowrap;
     overflow: hidden;
     padding-left: 60rpx;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     font-size: 30rpx;
     color: #bdbdbd;
-    -o-text-overflow: ellipsis;
-       text-overflow: ellipsis;
+    text-overflow: ellipsis;
 }
 .content .navTop .search .icon {
       width: 40rpx;
@@ -84,8 +81,7 @@
 }
 .content .slideWrap {
   background: #fafafa;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   position: relative;
   height: 90rpx;
   color: #a5adb5;
@@ -99,7 +95,6 @@
     width: 650rpx;
     display: -webkit-box;
     display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
 }
 .content .slideWrap .slideList .slideItem {
@@ -109,7 +104,6 @@
     position: absolute;
     top: 50%;
     -webkit-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
             transform: translateY(-50%);
     right: 20rpx;
     font-size: 24rpx;
@@ -117,9 +111,9 @@
 .content .contentList {
   position: absolute;
   width: 100%;
-  top: 190rpx;
+  top: 100rpx;
   left: 0;
-  height: calc(100% - 190rpx);
+  height: calc(100% - 100rpx);
   overflow-y: auto;
 }
 .content .contentList .contentItem {
@@ -146,13 +140,16 @@
 .content .contentList .contentItem .itemTop .userLogo {
         width: 70rpx;
         height: 70rpx;
-        background: red;
         position: absolute;
         top: 50%;
         -webkit-transform: translateY(-50%);
-            -ms-transform: translateY(-50%);
                 transform: translateY(-50%);
         left: 0rpx;
+        overflow: hidden;
+}
+.content .contentList .contentItem .itemTop .userLogo image {
+          width: 100%;
+          height: 100%;
 }
 .content .contentList .contentItem .contentText {
       font-size: 34rpx;
@@ -162,7 +159,6 @@
       width: 100%;
       display: -webkit-box;
       display: -webkit-flex;
-      display: -ms-flexbox;
       display: flex;
       margin: 20rpx auto;
 }
@@ -182,7 +178,6 @@
       width: 100%;
       display: -webkit-box;
       display: -webkit-flex;
-      display: -ms-flexbox;
       display: flex;
       color: rgba(40, 47, 60, 0.8);
       position: relative;
@@ -214,11 +209,9 @@
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   padding: 20rpx;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 .bom .btn {
     width: 400rpx;

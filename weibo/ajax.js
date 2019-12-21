@@ -10,8 +10,6 @@ if(process.env.NODE_ENV === 'development'){　　　　　　　　　　　　�
 // #ifdef MP-WEIXIN
 ohref='http://192.168.1.37:3002'
 // #endif
-
-console.log(ohref)
 /**
  * 弹出提示框。
  *@title type：string 提示的内容
@@ -45,13 +43,14 @@ export const hideLoading = () => {
 
 export const setTime = (time) => {
 	let actTime = new Date().getTime()
-	let mm = Math.ceil((actTime - new Date(time).getTime())/1000);
+	let mm = Math.ceil((actTime - time)/1000);
 	let day = parseInt(mm / (60 * 60* 24));
 	let mday = mm % (60 * 60* 24)
 	let h = parseInt(mday/( 60*60 ));
 	let mh = mday % (60*60)
 	let m = parseInt(mh/60)
 	let name =0;
+	console.log(time,actTime)
 	if(day>0){
 		name = day+'天前';
 		return name;
@@ -68,29 +67,9 @@ export const setTime = (time) => {
 export const ajax = {
 	upload:  		ohref + '/upload',
 	login:  		ohref + '/login',
+	wbSend:  		ohref + '/wbSend',
+	wbInfo:  		ohref + '/wbInfo',
+	wbInfoAppoint:  ohref + '/wbInfoAppoint',
 }
-
-
-export const urlTobase64 = (url)=>{
-	console.log(url)
-    wx.request({
-      url:url,
-      responseType: 'arraybuffer', //最关键的参数，设置返回的数据格式为arraybuffer
-      success:res=>{
-		  console.log(res)
-	      //把arraybuffer转成base64
-            let base64 = wx.arrayBufferToBase64(res.data); 
-            
-            //不加上这串字符，在页面无法显示的哦
-            base64　= 'data:image/jpeg;base64,' + base64　
-            return base64;
-            //打印出base64字符串，可复制到网页校验一下是否是你选择的原图片呢
-            console.log(base64,res,'chenggong')　
-          },
-		  fail:res=>{
-			  console.log('失败',res)
-		  }
-    })
- }
 
     

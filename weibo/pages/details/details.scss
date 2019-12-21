@@ -3,7 +3,7 @@
 		width: 100%;
 		top: 0;
 		left: 0;
-		height: 100%;
+		height: calc(100% - 100upx);
 		overflow-y: auto;
 		.contentItem{
 			padding: 20upx;
@@ -27,11 +27,14 @@
 				.userLogo {
 					width: 70upx;
 					height: 70upx;
-					background: red;
 					position: absolute;
 					top: 50%;
 					transform: translateY(-50%);
 					left: 0upx;
+					image{
+						width: 100%;
+						height: 100%;
+					}
 				}
 			}
 			.contentText{
@@ -133,6 +136,33 @@
 			}
 			.userName{
 				line-height: 70upx;
+			}
+		}
+	}
+	.footerBotton{
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 100upx;
+		line-height: 100upx;
+		padding: 0 30upx;
+		box-sizing: border-box;
+		background: #fff;
+		font-size: 26upx;
+		border-top: 1px solid #e6e6e6;
+		color: #333;
+		input{
+			height: 100%;
+		}
+		.txt{
+			display: inline-block;
+			width: 520upx;
+			&.fr{
+				float: right;
+				width: 80upx;
+				text-align: center;
+				// margin-right: 30upx;
 			}
 		}
 	}

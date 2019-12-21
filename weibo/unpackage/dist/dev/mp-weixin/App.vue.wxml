@@ -1,0 +1,1 @@
+<template name="010f20a9"><view class="_view M010f20a9 prop" wx:if="{{userInfo==''}}"><view class="_view M010f20a9 bom"><button class="_button M010f20a9 btn" lang="zh_CN" open-type="getUserInfo" bindgetuserinfo="handleProxy" data-eventid="{{'010f20a9-0'}}" data-comkey="{{$k}}">授权登录</button></view></view></template>

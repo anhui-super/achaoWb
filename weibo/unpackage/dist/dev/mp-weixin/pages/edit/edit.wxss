@@ -30,8 +30,7 @@
   position: relative;
   text-align: center;
   padding-top: 10rpx;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   border-bottom: 1px solid #cfcfcf;
 }
 .logo.data-v-c45bfd9c {
@@ -41,6 +40,11 @@
   border-bottom: 1px solid #cfcfcf;
   vertical-align: middle;
   border-radius: 50%;
+  overflow: hidden;
+}
+.logo .logoImg.data-v-c45bfd9c {
+    width: 100%;
+    height: 100%;
 }
 .editTxt.data-v-c45bfd9c {
   font-size: 30rpx;
@@ -54,37 +58,35 @@
   width: 100%;
   min-height: 200rpx;
   padding: 20rpx;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   font-size: 26rpx;
 }
 .contentImg.data-v-c45bfd9c {
   width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   margin: 0 auto;
   padding: 20rpx;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   -webkit-box-flex: 3;
   -webkit-flex: 3;
-      -ms-flex: 3;
           flex: 3;
   -webkit-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
           flex-wrap: wrap;
 }
 .contentImg .contentImgItem.data-v-c45bfd9c {
     width: 32%;
     overflow: hidden;
-    line-height: 0;
+    height: 240rpx;
+    line-height: 240rpx;
     margin-right: 2%;
     margin-bottom: 10rpx;
 }
 .contentImg .contentImgItem image.data-v-c45bfd9c {
       width: 100%;
+      display: inline-block;
+      vertical-align: middle;
 }
 .contentImg .contentImgItem.data-v-c45bfd9c:nth-child(3n) {
       margin-right: 0;

@@ -2,26 +2,22 @@
 	<view class="contentList">
 		<view class="contentItem">
 			<view class="itemTop">
-				<view class="userLogo"></view>
-				<view class="userName">justlovesdlrb</view>
+				<view class="userLogo">
+					<image :src="info.avatarUrl" mode="widthFix"></image>
+				</view>
+				<view class="userName">{{info.nickName}}</view>
 				<view class="tips">
-					<text class="userTime">12小时前</text>
+					<text class="userTime">{{info.time}}</text>
 					<text>来自</text>
-					<text class="userAdress">深圳宝安</text>
+					<text class="userAdress">{{info.district}}</text>
 				</view>
 			</view>
 			<view class="contentText">
-				 这有什么好奇怪的，仙侠剧，多个电表箱不足为奇哈哈哈哈😃😃😃 
+				{{info.content}}
 			</view>
-			<view class="contentImg" >
-				<view class="contentImgItem" :style="{height: oheight+'upx'}">
-					<image src="https://wx3.sinaimg.cn/orj360/752a7063ly3g9fzlp5o1aj20u00u04qp.jpg" mode="widthFix"></image>
-				</view>
-				<view class="contentImgItem" :style="{height: oheight+'upx'}">
-					<image src="https://wx3.sinaimg.cn/orj360/752a7063ly3g9fzlp5o1aj20u00u04qp.jpg" mode="widthFix"></image>
-				</view>
-				<view class="contentImgItem" :style="{height: oheight+'upx'}">
-					<image src="https://wx3.sinaimg.cn/orj360/752a7063ly3g9fzlp5o1aj20u00u04qp.jpg" mode="widthFix"></image>
+			<view class="contentImg" v-if="info.imgList!=null&& info.imgList.length>0" >
+				<view class="contentImgItem" v-for="(item,index) in info.imgList" :key="index" :style="{height: oheight+'upx'}">
+					<image :src="'https://tt.ilout.com'+item" mode="widthFix"></image>
 				</view>
 			</view>
 		</view>
@@ -33,7 +29,7 @@
 			<view class="item" :class="index==3?'active':''" @click="footerBtn(3)">点赞253</view>
 		</view>
 		<view class="tab2" v-if="index==1">
-			<view class="tab2Time" v-for="(item,index) in list" v:key="index">
+			<view class="tab2Time" v-for="(item,index) in list" :key="index">
 				<!-- <image class="logo" src="" mode=""></image> -->
 				<view class="contRight">
 					<view class="userName">用户名</view>
@@ -45,7 +41,7 @@
 			</view>
 		</view>
 		<view class="tab2" v-if="index==2">
-			<view class="tab2Time" v-for="(item,index) in list" v:key="index">
+			<view class="tab2Time" v-for="(item,index) in list" :key="index">
 				<!-- <image class="logo" src="" mode=""></image> -->
 				<view class="contRight">
 					<view class="userName">用户名</view>
@@ -59,30 +55,67 @@
 						<text class="pl">评论</text>
 						<text class="dz">点赞22</text>
 					</view>
+					<view class="footComment">
+						<input type="text" placeholder="发表评论">
+						<view class="fbtn">发送</view>
+					</view>
 				</view>
 			</view>
 		</view>
 		
 		<view class="tab2 tab3" v-if="index==3">
-			<view class="tab2Time" v-for="(item,index) in list" v:key="index">
+			<view class="tab2Time" v-for="(item,index) in list" :key="index">
 				<!-- <image class="logo" src="" mode=""></image> -->
 				<view class="contRight">
 					<view class="userName">用户名</view>
 				</view>
 			</view>
 		</view>
+		
+		
+		<view class="footerBotton">
+			<input class="txt" type="text" value="" placeholder="发表评论" />
+			<view class="txt fr">点赞</view>
+			<view class="txt fr">发送</view>
+		</view>
 	</view>
 </template>
 
 <script>
+	import {ajax,showTips,setTime,showLoading,hideLoading} from '@/ajax.js'
 	export default {
 		data() {
 			return {
 				index:2,
-				list:[{},{}]
+				list:[{},{},{},{}],
+				info:''
 			}
 		},
-		onLoad() {
+		onLoad(e) {
+			console.log(e)
+			this.index = e.index/1;
+			let _this = this;
+			showLoading()
+			uni.request({
+				url: ajax.wbInfoAppoint, 
+				header:{
+					'Content-Type':'application/x-www-form-urlencoded'
+				},
+				data:{
+					id:e.id
+				},
+				method:'post',
+				success: (res) => {
+					hideLoading()
+					if(res.data.code==200){
+						_this.info = res.data.data
+						_this.info.time =setTime(res.data.data.startTime)
+						if(_this.info.imgList!=null&&_this.info.imgList!=''){
+							_this.info.imgList = JSON.parse(_this.info.imgList)
+						}
+					}
+				},
+			})
 		},
 		methods: {
 			footerBtn(e){

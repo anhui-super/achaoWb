@@ -29,7 +29,7 @@
   width: 100%;
   top: 0;
   left: 0;
-  height: 100%;
+  height: calc(100% - 100rpx);
   overflow-y: auto;
 }
 .contentList .contentItem {
@@ -56,13 +56,15 @@
 .contentList .contentItem .itemTop .userLogo {
         width: 70rpx;
         height: 70rpx;
-        background: red;
         position: absolute;
         top: 50%;
         -webkit-transform: translateY(-50%);
-            -ms-transform: translateY(-50%);
                 transform: translateY(-50%);
         left: 0rpx;
+}
+.contentList .contentItem .itemTop .userLogo image {
+          width: 100%;
+          height: 100%;
 }
 .contentList .contentItem .contentText {
       font-size: 34rpx;
@@ -72,7 +74,6 @@
       width: 100%;
       display: -webkit-box;
       display: -webkit-flex;
-      display: -ms-flexbox;
       display: flex;
       margin: 20rpx auto;
 }
@@ -90,19 +91,16 @@
 .contentList .footer {
     font-size: 28rpx;
     border-top: 10rpx solid #e6e6e6;
-    -webkit-box-shadow: 0 1px 0 0 #e6e6e6;
-            box-shadow: 0 1px 0 0 #e6e6e6;
+    box-shadow: 0 1px 0 0 #e6e6e6;
     width: 100%;
     display: -webkit-box;
     display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
     color: rgba(40, 47, 60, 0.8);
     padding: 0 20rpx;
     line-height: 100rpx;
     height: 100rpx;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     position: relative;
 }
 .contentList .footer .item {
@@ -164,5 +162,31 @@
 }
 .contentList .tab3 .userName {
     line-height: 70rpx;
+}
+.footerBotton {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  background: #fff;
+  font-size: 26rpx;
+  border-top: 1px solid #e6e6e6;
+  color: #333;
+}
+.footerBotton input {
+    height: 100%;
+}
+.footerBotton .txt {
+    display: inline-block;
+    width: 520rpx;
+}
+.footerBotton .txt.fr {
+      float: right;
+      width: 80rpx;
+      text-align: center;
 }
 
